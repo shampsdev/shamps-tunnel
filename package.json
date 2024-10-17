@@ -1,0 +1,19 @@
+{
+  "name": "tunnel-service",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/shampsdev/tunnel-service.git",
+  "author": "Mike de Geofroy <mikedegeofroy@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "figlet": "^1.8.0",
+    "node-ssh": "^13.2.0",
+    "typescript": "^5.6.3"
+  },
+  "devDependencies": {
+    "@types/figlet": "^1.7.0",
+    "@types/node": "^22.7.5",
+    "@types/ssh2": "^1.15.1",
+    "ts-node": "^10.9.2"
+  }
+}

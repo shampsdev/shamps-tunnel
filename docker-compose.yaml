@@ -1,0 +1,12 @@
+services:
+  openssh-server:
+    image: lscr.io/linuxserver/openssh-server:latest
+    container_name: openssh-server
+    environment:
+      - DOCKER_MODS=linuxserver/mods:openssh-server-ssh-tunnel
+    volumes:
+      - ./config:/config
+    ports:
+      - "8000:8000"
+      - "2222:2222"
+    restart: unless-stopped

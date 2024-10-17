@@ -1,0 +1,4 @@
+node_modules
+/config/logs
+/config/ssh_host_keys
+/config/sshd.pid
