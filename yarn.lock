@@ -109,6 +109,11 @@ buildcheck@~0.0.6:
   resolved "https://registry.npmjs.org/buildcheck/-/buildcheck-0.0.6.tgz"
   integrity sha512-8f9ZJCUXyT1M35Jx7MkBgmBMo3oHTTBIPLiY9xyL0pl3T5RwcPEY8cUHr5LBNfu/fk6c2T4DJZuVM/8ZZT2D2A==
 
+commander@^12.1.0:
+  version "12.1.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-12.1.0.tgz#01423b36f501259fdaac4d0e4d60c96c991585d3"
+  integrity sha512-Vw8qHK3bZM9y/P10u3Vib8o/DdkvA2OtPtZvD871QKjy74Wj1WSKFILMPRPSdUSx5RFK1arlJzEtA4PkFgnbuA==
+
 cpu-features@~0.0.10:
   version "0.0.10"
   resolved "https://registry.npmjs.org/cpu-features/-/cpu-features-0.0.10.tgz"

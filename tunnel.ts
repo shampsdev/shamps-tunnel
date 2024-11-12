@@ -2,36 +2,49 @@
 
 import { exec } from 'node:child_process';
 import figlet from 'figlet';
+import { Command } from 'commander';
 
-const remoteHost = 'linuxserver.io@tunnel.shamps.dev';
-const remotePort = 2222;
-const tunnelPort = 8080;
+const program = new Command();
 
-const localPort = process.argv[2] || 5173;
+program
+  .version('1.0.0')
+  .description('ShampsTunnel - A customizable SSH reverse tunnel utility')
+  .option('-u, --user <user>', 'SSH user', 'linuxserver.io')
+  .option('-h, --host <host>', 'Remote host IP', 'tunnel.shamps.dev')
+  .option('-r, --remote-port <port>', 'Remote SSH port', '2222')
+  .option('-t, --tunnel-port <port>', 'Tunnel port on the server', '8080')
+  .option('-l, --local-port <port>', 'Local port to forward', '5173');
+
+program.parse(process.argv);
+
+const options = program.opts();
+
+const { user, host, remotePort, tunnelPort, localPort } = options;
 
 const run = () => {
-  const command = `ssh ${remoteHost} -p ${remotePort} -N -R 0.0.0.0:${tunnelPort}:localhost:${localPort}`;
+  const command = `ssh ${user}@${host} -p ${remotePort} -N -R 0.0.0.0:${tunnelPort}:localhost:${localPort}`;
 
-  figlet('ShampsTunnel', function (err, data) {
+  figlet('ShampsTunnel', (err, data) => {
     if (err) {
       console.log('Something went wrong...');
       console.dir(err);
       return;
     }
     console.log(data);
-    console.log(`\n\nRunning tunnel on localhost:${localPort}`);
+    console.log(`\nRunning tunnel from ${user}@${host}:${remotePort}`);
+    console.log(`Forwarding remote port ${tunnelPort} to localhost:${localPort}`);
   });
 
-  exec(command, (error, stdout, stderr) => {
+  exec(command, (error, _stdout, stderr) => {
     if (error) {
       console.error(`Error: ${error.message}`);
       return;
     }
     if (stderr) {
       console.error(`Stderr: ${stderr}`);
-      return;
     }
   });
 };
 
 run();
+

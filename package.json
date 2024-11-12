@@ -6,6 +6,7 @@
   "author": "Mike de Geofroy <mikedegeofroy@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "commander": "^12.1.0",
     "figlet": "^1.8.0",
     "node-ssh": "^13.2.0",
     "typescript": "^5.6.3"
