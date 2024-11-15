@@ -1,6 +1,6 @@
 {
   "name": "shamps-tunnel",
-  "version": "1.0.0",
+  "version": "1.1.2",
   "main": "index.js",
   "repository": "https://github.com/shampsdev/shamps-tunnel.git",
   "author": "Mike de Geofroy <mikedegeofroy@gmail.com>",
