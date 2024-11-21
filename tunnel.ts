@@ -22,7 +22,7 @@ const options = program.opts();
 const { user, host, remotePort, tunnelPort, localPort } = options;
 
 const run = () => {
-  const command = `ssh ${user}@${host} -p ${remotePort} -N -R 0.0.0.0:${tunnelPort}:127.0.0.1:${localPort}`;
+  const command = `ssh -vvv ${user}@${host} -p ${remotePort} -N -R 0.0.0.0:${tunnelPort}:127.0.0.1:${localPort}`;
 
   figlet('ShampsTunnel', (err, data) => {
     if (err) {
